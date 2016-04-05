@@ -64,8 +64,20 @@
       &nbsp;&nbsp;&nbsp;
       <input type="button" value="Fullscreen" onclick="Module.requestFullScreen(document.getElementById('pointerLock').checked, 
                                                                                 document.getElementById('resize').checked)">
-	<input id="Button" type="button" value="Square Root" onclick=alert("The\tsqrt\tof\t"+document.getElementById('output').value+"\tis\t"+_custom_sqrt(document.getElementById('output').value))>
-	<input id="Button" type="button" value="Is it Even" onclick=alert(_is_even(document.getElementById('output').value))>
+	<input id="Button" type="button" value="Square Root" onclick="calculate_sqrt()">
+	<input id="Button" type="button" value="Is it Even" onclick="check_even()">
+
+	<script>
+	function calculate_sqrt() {
+		alert("The sqrt of "+document.getElementById('output').value+" is "+_custom_sqrt(document.getElementById('output').value));
+	}
+	function check_even() {
+		//alert(_is_even(document.getElementById('output').value));
+		//var result = Module.ccall('is_even', 'x', ['x'], [document.getElementById('output').value]);
+//		alert(result);
+		alert(_js_is_even(document.getElementById('output').value));
+	}
+	</script>
     </div>
     
     <hr/>
