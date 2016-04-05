@@ -65,11 +65,12 @@
       <input type="button" value="Fullscreen" onclick="Module.requestFullScreen(document.getElementById('pointerLock').checked, 
                                                                                 document.getElementById('resize').checked)">
 	<input id="Button" type="button" value="Square Root" onclick=alert("The\tsqrt\tof\t"+document.getElementById('output').value+"\tis\t"+_custom_sqrt(document.getElementById('output').value))>
+	<input id="Button" type="button" value="Is it Even" onclick=alert(_is_even(document.getElementById('output').value))>
     </div>
     
     <hr/>
 <center><p style="color: green; background-color: black">Console Command</p></center>
-<center><p>Enter number bellow and then press button to execute sqrt</p></center>
+<center><p>Enter number bellow and then press button to execute sqrt or to check if it's even or not</p></center>
     <textarea class="emscripten" id="output" rows="8"></textarea>
     <hr>
     <script type='text/javascript'>
