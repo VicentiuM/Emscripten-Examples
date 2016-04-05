@@ -2035,17 +2035,15 @@ function getTempRet0() {
   return tempRet0|0;
 }
 
-function _int_sqrt($x) {
- $x = $x|0;
- var $0 = 0, $1 = 0, $2 = 0.0, $3 = 0.0, $4 = 0, label = 0, sp = 0;
+function _custom_sqrt($x) {
+ $x = +$x;
+ var $0 = 0.0, $1 = 0.0, $2 = 0.0, label = 0, sp = 0;
  sp = STACKTOP;
  STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abort();
  $0 = $x;
  $1 = $0;
- $2 = (+($1|0));
- $3 = (+Math_sqrt((+$2)));
- $4 = (~~(($3)));
- STACKTOP = sp;return ($4|0);
+ $2 = (+Math_sqrt((+$1)));
+ STACKTOP = sp;return (+$2);
 }
 function ___stdio_close($f) {
  $f = $f|0;
@@ -5637,7 +5635,7 @@ var FUNCTION_TABLE_ii = [b0,___stdio_close];
 var FUNCTION_TABLE_iiii = [b1,b1,___stdout_write,___stdio_seek,___stdio_write,b1,b1,b1];
 var FUNCTION_TABLE_vi = [b2,b2,b2,b2,b2,_cleanup_89,b2,b2];
 
-  return { _free: _free, _memset: _memset, _malloc: _malloc, _memcpy: _memcpy, _int_sqrt: _int_sqrt, _fflush: _fflush, ___errno_location: ___errno_location, runPostSets: runPostSets, stackAlloc: stackAlloc, stackSave: stackSave, stackRestore: stackRestore, establishStackSpace: establishStackSpace, setThrew: setThrew, setTempRet0: setTempRet0, getTempRet0: getTempRet0, dynCall_ii: dynCall_ii, dynCall_iiii: dynCall_iiii, dynCall_vi: dynCall_vi };
+  return { _free: _free, _memset: _memset, _malloc: _malloc, _memcpy: _memcpy, _custom_sqrt: _custom_sqrt, _fflush: _fflush, ___errno_location: ___errno_location, runPostSets: runPostSets, stackAlloc: stackAlloc, stackSave: stackSave, stackRestore: stackRestore, establishStackSpace: establishStackSpace, setThrew: setThrew, setTempRet0: setTempRet0, getTempRet0: getTempRet0, dynCall_ii: dynCall_ii, dynCall_iiii: dynCall_iiii, dynCall_vi: dynCall_vi };
 })
 // EMSCRIPTEN_END_ASM
 (Module.asmGlobalArg, Module.asmLibraryArg, buffer);
@@ -5647,16 +5645,16 @@ assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it a
 return real__fflush.apply(null, arguments);
 };
 
+var real__custom_sqrt = asm["_custom_sqrt"]; asm["_custom_sqrt"] = function() {
+assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
+assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
+return real__custom_sqrt.apply(null, arguments);
+};
+
 var real__malloc = asm["_malloc"]; asm["_malloc"] = function() {
 assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
 assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
 return real__malloc.apply(null, arguments);
-};
-
-var real__int_sqrt = asm["_int_sqrt"]; asm["_int_sqrt"] = function() {
-assert(runtimeInitialized, 'you need to wait for the runtime to be ready (e.g. wait for main() to be called)');
-assert(!runtimeExited, 'the runtime was exited (use NO_EXIT_RUNTIME to keep it alive after main() exits)');
-return real__int_sqrt.apply(null, arguments);
 };
 
 var real__free = asm["_free"]; asm["_free"] = function() {
@@ -5673,9 +5671,9 @@ return real____errno_location.apply(null, arguments);
 var _fflush = Module["_fflush"] = asm["_fflush"];
 var runPostSets = Module["runPostSets"] = asm["runPostSets"];
 var _memset = Module["_memset"] = asm["_memset"];
+var _custom_sqrt = Module["_custom_sqrt"] = asm["_custom_sqrt"];
 var _malloc = Module["_malloc"] = asm["_malloc"];
 var _memcpy = Module["_memcpy"] = asm["_memcpy"];
-var _int_sqrt = Module["_int_sqrt"] = asm["_int_sqrt"];
 var _free = Module["_free"] = asm["_free"];
 var ___errno_location = Module["___errno_location"] = asm["___errno_location"];
 var dynCall_ii = Module["dynCall_ii"] = asm["dynCall_ii"];

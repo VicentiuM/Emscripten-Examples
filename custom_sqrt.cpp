@@ -2,7 +2,7 @@
 
 extern "C" {
 
-int int_sqrt(int x) {
+double custom_sqrt(double x) {
   return sqrt(x);
 }
 

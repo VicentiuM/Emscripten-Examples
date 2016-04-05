@@ -64,8 +64,7 @@
       &nbsp;&nbsp;&nbsp;
       <input type="button" value="Fullscreen" onclick="Module.requestFullScreen(document.getElementById('pointerLock').checked, 
                                                                                 document.getElementById('resize').checked)">
-	<input id="Button" type="button" value="int_sqrt" onclick="int_sqrt = Module.cwrap('int_sqrt', 'number', ['number']); 
-	alert(int_sqrt(document.getElementById('output').value))">
+	<input id="Button" type="button" value="Square Root" onclick=alert("The\tsqrt\tof\t"+document.getElementById('output').value+"\tis\t"+_custom_sqrt(document.getElementById('output').value))>
     </div>
     
     <hr/>
