@@ -1768,7 +1768,7 @@ function copyTempDouble(ptr) {
     }
 
   function _is_even(x) {
-  		 return ( x & 1 ) ? "odd" : "even";
+  		 return ( x & 1 ) ? 1 : 0;
   		//alert('HI');
   	}
 
